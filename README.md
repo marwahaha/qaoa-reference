@@ -10,4 +10,4 @@ Last updated 2021 July
 
 ## Open problems
 
-## Important Papers
+## Important papers
