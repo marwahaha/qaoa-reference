@@ -23,18 +23,17 @@
   <div class="wrapper">
     <header>
       <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
-      <p class="header"><small>Last updated <span id="update-date"></span></small></p>
+      <p>updated <span id="update-date"></span></p>
+      <ul>
+        <li class="download">
+          <a class="buttons github" href="https://github.com/marwahaha/qaoa-reference/edit/main/README.md">Edit this
+            page</a></li>
+      </ul>
     </header>
 
     <section>
       {{ content }}
     </section>
-
-    <footer>
-      <p>
-        <a href="https://github.com/marwahaha/qaoa-reference/edit/main/README.md">Edit this page</a>
-      </p>
-    </footer>
   </div>
   <script>
     var d = new Date();
