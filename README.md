@@ -65,3 +65,7 @@ In VQE -- the ansatz holds something I can't hold classically, so intermediate s
 You really want the concentration on the optimal value; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail.
 
 There are alternate metrics of performance, such as ___.
+
+#### QAOA is just adiabatic computation
+
+Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041)
