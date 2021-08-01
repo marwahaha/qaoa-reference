@@ -30,6 +30,7 @@ At high depth, the algorithm's success is dependent on choosing the best paramet
 
 There are some studies of optimal QAOA parameters for some graphs being transferable to other graphs (instance independence); see [Galda+ 2021](https://arxiv.org/abs/2106.07531) or [Brandao+ 2018](https://arxiv.org/abs/1812.04170)
 
+It would be nice to discuss some results on barren plateaus here, and also mention what happens to error.
 
 ## Extensions to QAOA
 
@@ -39,9 +40,27 @@ Several adjustments to QAOA have been proposed:
 * Alternating Operator Ansatz [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996)
 * RQAOA [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)
 
+Some of these extensions are "true extensions" (sampling things from quantum computers), such as penalty proposals and adjusting the mixers; while others are new protocols that use QAOA inside of it (CD-QAOA, RQAOA).
+
 
 ## Open problems
 
 * Which problems and families of instances can we show that QAOA provides advantage over classical algorithms?
 * How can we analyze QAOA at higher depth?
 * How can we better choose the QAOA parameters?
+
+## Popular, incorrect statements about QAOA
+
+####  MAX-CUT is an interesting problem for quantum advantage
+This is the case because...
+
+#### VQE is the same as QAOA
+It's worth making clear similarities and differences between VQE (e.g. electronic structure) and QAOA (diagonal eigenvalue problems vs non-diagonal eigenvalue problems)
+
+In VQE -- the ansatz holds something I can't hold classically, so intermediate strings don't tell me what the state is.
+
+#### The expected performance is what matters
+
+You really want the concentration on the optimal value; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail.
+
+There are alternate metrics of performance, such as ___.
