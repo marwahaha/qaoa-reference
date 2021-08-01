@@ -1,4 +1,4 @@
-Last updated 2021 July
+Last updated 2021 August
 
 ## What is QAOA?
 
@@ -28,7 +28,8 @@ At high depth, the algorithm's success is dependent on choosing the best paramet
 * Fourier method and interpolation method ([Zhou+ 2018](https://arxiv.org/abs/1812.01041))
 * Variational methods that alternate between a computer and quantum computer ([Farhi+ 2014](https://arxiv.org/abs/1411.4028))
 
-There are some studies of optimal QAOA parameters for some graphs being transferable to other graphs (instance independence); see [Galda+ 2021](https://arxiv.org/abs/2106.07531) or [Brandao+ 2018](https://arxiv.org/abs/1812.04170)
+There are some studies of optimal QAOA parameters for some graphs being transferable to other graphs (instance independence); see [Galda+ 2021](https://arxiv.org/abs/2106.07531), [Brandao+ 2018](https://arxiv.org/abs/1812.04170), or [Wurtz+ 2021](https://arxiv.org/abs/2107.00677).
+
 
 It would be nice to discuss some results on barren plateaus here, and also mention what happens to error.
 
