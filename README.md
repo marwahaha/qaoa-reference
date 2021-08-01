@@ -1,5 +1,3 @@
-Last updated 2021 August
-
 ## What is QAOA?
 
 "Quantum Approximate Optimization Algorithm"

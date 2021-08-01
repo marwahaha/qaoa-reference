@@ -23,7 +23,7 @@
   <div class="wrapper">
     <header>
       <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
-      <p class="header">{{ site.description | default: site.github.project_tagline }}</p>
+      <p class="header">Last updated <span id="update-date"></span></p>
     </header>
 
     <section>
@@ -36,7 +36,10 @@
       </p>
     </footer>
   </div>
-  <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+  <script>
+    var d = new Date();
+    document.getElementById("update-date").innerText = (new Date()).toDateString();
+  </script>
 </body>
 
 </html>
