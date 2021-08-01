@@ -33,7 +33,7 @@ There are some studies of optimal QAOA parameters for some graphs being transfer
 
 ## Extensions to QAOA
 
-Several adjustments to QAOA have been proposed to get around limitations:
+Several adjustments to QAOA have been proposed:
 * ST-QAOA [Wurtz+ 2021a](https://arxiv.org/abs/2103.17065)
 * CD-QAOA [Wurtz+ 2021b](https://arxiv.org/abs/2106.15645)
 * Alternating Operator Ansatz [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996)
@@ -43,7 +43,5 @@ Several adjustments to QAOA have been proposed to get around limitations:
 ## Open problems
 
 * Which problems and families of instances can we show that QAOA provides advantage over classical algorithms?
-
 * How can we analyze QAOA at higher depth?
-
 * How can we better choose the QAOA parameters?
