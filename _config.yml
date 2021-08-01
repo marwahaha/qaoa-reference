@@ -1,2 +1,5 @@
 theme: jekyll-theme-tactile
 title: The living QAOA reference
+markdown: kramdown
+kramdown:
+  math_engine: mathjax
