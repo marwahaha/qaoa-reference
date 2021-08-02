@@ -41,6 +41,7 @@ Several adjustments to QAOA have been proposed:
 
 Some of these extensions are "true extensions" (sampling things from quantum computers), such as penalty proposals and adjusting the mixers; while others are new protocols that use QAOA inside of it (CD-QAOA, RQAOA).
 
+Some of these protocols turn QAOA into a non-local algorithm.
 
 ## Open problems
 
@@ -60,7 +61,9 @@ In VQE -- the ansatz holds something I can't hold classically, so intermediate s
 
 #### The expected performance is what matters
 
-You really want the concentration on the optimal value; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail.
+You really want the highest value the QAOA returns; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail.
+
+The QAOA may also perform well even if the overlap with optimal value is low.
 
 There are alternate metrics of performance, such as ___.
 
