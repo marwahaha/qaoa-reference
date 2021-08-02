@@ -23,7 +23,7 @@
   <div class="wrapper">
     <header>
       <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
-      <p>updated <span id="update-date"></span></p>
+      <p>updated <span id="update-date">{{ site.data.updated.date }}</span></p>
       <ul>
         <li class="download">
           <a class="buttons github" href="https://github.com/marwahaha/qaoa-reference/edit/main/README.md">Edit this
@@ -37,8 +37,8 @@
     </section>
   </div>
   <script>
-    var d = new Date();
-    document.getElementById("update-date").innerText = (new Date()).toDateString();
+    var date = document.getElementById("update-date").innerText;
+    document.getElementById("update-date").innerText  = (new Date(date + 'T00:00:00.000Z') ).toUTCString().split(" ").slice(0,4).join(" ");
   </script>
 </body>
 
