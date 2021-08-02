@@ -1,0 +1,17 @@
+name: recent
+on:
+  push:
+    branches: [ main ]
+jobs:
+  auto_update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2-beta # use either @v2-beta or @master. Eventually there will be a @v2 tag.
+        with:
+          fetch-depth: 0
+      - name: get update date
+        run: |
+          echo "date:" $(git log -1 --format=%ci | cut -d ' ' -f1)  > _data/updated.yml
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
