@@ -51,15 +51,15 @@ Some of these protocols turn QAOA into a non-local algorithm.
 
 ## Popular, incorrect statements about QAOA
 
-####  MAX-CUT is an interesting problem for quantum advantage
+####  WRONG: MAX-CUT is an interesting problem for quantum advantage
 This is the case because...
 
-#### VQE is the same as QAOA
+####  WRONG: VQE is the same as QAOA
 It's worth making clear similarities and differences between VQE (e.g. electronic structure) and QAOA (diagonal eigenvalue problems vs non-diagonal eigenvalue problems)
 
 In VQE -- the ansatz holds something I can't hold classically, so intermediate strings don't tell me what the state is.
 
-#### The expected performance is what matters
+####  WRONG: The expected performance is what matters
 
 You really want the highest value the QAOA returns; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail.
 
@@ -67,6 +67,6 @@ The QAOA may also perform well even if the overlap with optimal value is low.
 
 There are alternate metrics of performance, such as ___.
 
-#### QAOA is just adiabatic computation
+####  WRONG: QAOA is just adiabatic computation
 
 Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041)
