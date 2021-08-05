@@ -4,7 +4,7 @@
 
 * Protocol for approximately solving an optimization problem on a quantum computer
 * Can be implemented on near-term devices!
-* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves the problem as $$p \to \infty$$
+* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
 * Some tutorials [here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html) and [here](https://qiskit.org/textbook/ch-applications/qaoa.html)
 * This is a 'local' algorithm, which may limit its power.
@@ -21,7 +21,20 @@
 | SK Model            | 1-12       | infinite size                               | see formula                               | ?                                   | [Farhi+ 2019](https://arxiv.org/abs/1910.08187)                                                                                                  |
 | Max Independent Set | 1          | any                                         | at least $$O(n/d)$$                       | so far, No (KM project in progress) | [Farhi+ 2020](https://arxiv.org/abs/2004.09002)                                                                                                  |
 
+wishlist:
+* add any results from Marika's papers
+* add QUBOs at p=1
+* add any results from Stuart's thesis
+* Eleanor and Zhihui's paper on Grover with QAOA
+
+Limitations on performance at low depth:
+* Farhi's can't see the whole graph papers
+* Bravyi paper
+
+
 ## Choosing optimal parameters
+
+
 At high depth, the algorithm's success is dependent on choosing the best parameters. Strategies to make this easier include:
 * Fourier method and interpolation method ([Zhou+ 2018](https://arxiv.org/abs/1812.01041))
 * Variational methods that alternate between a computer and quantum computer ([Farhi+ 2014](https://arxiv.org/abs/1411.4028))
@@ -30,6 +43,14 @@ There are some studies of optimal QAOA parameters for some graphs being transfer
 
 
 It would be nice to discuss some results on barren plateaus here, and also mention what happens to error.
+
+wishlist:
+* compare and contrast parameter setting strategies
+    * brute force // preprocessing
+    * variational
+    * interpolative
+    * fourier methods
+* Does it depend on if the goal is to get the ground state or to get close?
 
 ## Extensions to QAOA
 
@@ -43,6 +64,11 @@ Some of these extensions are "true extensions" (sampling things from quantum com
 
 Some of these protocols turn QAOA into a non-local algorithm.
 
+## Limitations to simulating QAOA
+
+Farhi & Harrow - quantum advantage/supremacy result
+
+
 ## Open problems
 
 * Which problems and families of instances can we show that QAOA provides advantage over classical algorithms?
@@ -51,8 +77,8 @@ Some of these protocols turn QAOA into a non-local algorithm.
 
 ## Popular, incorrect statements about QAOA
 
-####  WRONG: MAX-CUT is an interesting problem for quantum advantage
-This is the case because...
+####  WRONG: MAX-CUT is clearly an interesting problem for quantum advantage
+Goemans-Williamson (SDP) is already potentially optimal if Unique Games Conjecture is true. There may be families of graphs where quantum computing can help; but other problems have much bigger gaps between best classical algorithm and limits of approximation.
 
 ####  WRONG: VQE is the same as QAOA
 It's worth making clear similarities and differences between VQE (e.g. electronic structure) and QAOA (diagonal eigenvalue problems vs non-diagonal eigenvalue problems)
