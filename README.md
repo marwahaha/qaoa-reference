@@ -95,4 +95,4 @@ There are alternate metrics of performance, such as ___.
 
 ####  WRONG: QAOA is just adiabatic computation
 
-Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041)
+Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041) and also [Brady+ 2021](https://arxiv.org/abs/2107.01218)
