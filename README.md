@@ -44,6 +44,10 @@ There are some studies of optimal QAOA parameters for some graphs being transfer
 
 It would be nice to discuss some results on barren plateaus here, and also mention what happens to error.
 
+optimal parameters cluster on small graphs -- [Lotshaw+ 2021](https://arxiv.org/abs/2102.06813)
+
+graph structure affect QAOA performance -- [Herrman+ 2021](https://arxiv.org/abs/2102.05997)
+
 wishlist:
 * compare and contrast parameter setting strategies
     * brute force // preprocessing
@@ -72,7 +76,7 @@ Farhi & Harrow - quantum advantage/supremacy result
 ## Open problems
 
 * Which problems and families of instances can we show that QAOA provides advantage over classical algorithms?
-* How can we analyze QAOA at higher depth?
+* How can we analyze QAOA at higher depth? (for example, some ideas in [Hadfield+ 2021](https://arxiv.org/abs/2105.06996))
 * How can we better choose the QAOA parameters?
 
 ## Popular, incorrect statements about QAOA
