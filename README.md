@@ -11,6 +11,8 @@
 
 ## Performance analysis at low depth
 
+The QAOA at low depth is easiest to analyze. Here is a table of known results:
+
 | Problem             | QAOA depth | Graph                                       | optimal performance (satisfying fraction) | best known algorithm?               | Papers                                                                                                                                           |
 |---------------------|------------|---------------------------------------------|-------------------------------------------|-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
 | MAX-CUT             | 1          | triangle-free                               | $$1/2 + 0.30/\sqrt{D}$$                   | No                                  | [Wang+ 2018](https://arxiv.org/abs/1706.02998), [Hastings 2019](https://arxiv.org/abs/1905.07047)                                                |
@@ -21,15 +23,13 @@
 | SK Model            | 1-12       | infinite size                               | see formula                               | ?                                   | [Farhi+ 2019](https://arxiv.org/abs/1910.08187)                                                                                                  |
 | Max Independent Set | 1          | any                                         | at least $$O(n/d)$$                       | so far, No (KM project in progress) | [Farhi+ 2020](https://arxiv.org/abs/2004.09002)                                                                                                  |
 
-wishlist:
-* add any results from Marika's papers
-* add QUBOs at p=1
-* add any results from Stuart's thesis
-* Eleanor and Zhihui's paper on Grover with QAOA
+Other results:
+* Marika Svensson's [papers](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=author%3A%22m+svensson%22+qaoa&btnG=)
+* The performance of QAOA at $$p=1$$ for a "QUBO" (quadratic cost function) is known
+* Stuart Hadfield's thesis (for example, on MaxDiCut)
+* [NASA QuAIL's paper](https://arxiv.org/abs/1702.02577) on Grover search with QAOA
 
-Limitations on performance at low depth:
-* Farhi's can't see the whole graph papers
-* Bravyi paper
+The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), and [Bravyi+ 2019](https://arxiv.org/abs/1910.08980).
 
 
 ## Choosing optimal parameters
