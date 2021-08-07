@@ -20,8 +20,8 @@
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
+  <div class="wrapper" style="width:100%">
+    <header style="width:20%">
       <h1 class="header">{{ site.title | default: site.github.repository_name }}</h1>
       <p>updated <span id="update-date">{{ site.data.updated.date }}</span></p>
       <ul>
@@ -32,13 +32,13 @@
       </ul>
     </header>
 
-    <section>
+    <section style="width:70%">
       {{ content }}
     </section>
   </div>
   <script>
     var date = document.getElementById("update-date").innerText;
-    document.getElementById("update-date").innerText  = (new Date(date + 'T00:00:00.000Z') ).toUTCString().split(" ").slice(0,4).join(" ");
+    document.getElementById("update-date").innerText = (new Date(date + 'T00:00:00.000Z')).toUTCString().split(" ").slice(0, 4).join(" ");
   </script>
 </body>
 
