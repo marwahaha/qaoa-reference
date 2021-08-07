@@ -1,6 +1,6 @@
 ## What is QAOA?
 
-"Quantum Approximate Optimization Algorithm"
+QAOA is short for "Quantum Approximate Optimization Algorithm".
 
 * Protocol for approximately solving an optimization problem on a quantum computer
 * Can be implemented on near-term devices!
@@ -23,7 +23,7 @@ The QAOA at low depth is easiest to analyze. Here is a table of known results:
 | SK Model            | 1-12       | infinite size                               | see formula                               | ?                                   | [Farhi+ 2019](https://arxiv.org/abs/1910.08187)                                                                                                  |
 | Max Independent Set | 1          | any                                         | at least $$O(n/d)$$                       | so far, No (KM project in progress) | [Farhi+ 2020](https://arxiv.org/abs/2004.09002)                                                                                                  |
 
-Other results:
+There are some other results on low-depth QAOA (perhaps could be added to the table above):
 * Marika Svensson's [papers](https://scholar.google.com/scholar?hl=en&as_sdt=0%2C5&q=author%3A%22m+svensson%22+qaoa&btnG=)
 * The performance of QAOA at $$p=1$$ for a "QUBO" (quadratic cost function) is known
 * Stuart Hadfield's thesis (for example, on MaxDiCut)
@@ -31,30 +31,21 @@ Other results:
 
 The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), and [Bravyi+ 2019](https://arxiv.org/abs/1910.08980).
 
+The graph structure may impact QAOA performance; see [Herrman+ 2021](https://arxiv.org/abs/2102.05997) for a study on small graphs.
 
 ## Choosing optimal parameters
 
+At high depth, the algorithm's success is dependent on choosing the best parameters. There are different strategies to best set parameters, depending on your goal. (Note: Optimally tuning your parameters [is a NP-hard problem](https://arxiv.org/abs/2101.07267)!) Here is a table of different parameter-setting strategies:
 
-At high depth, the algorithm's success is dependent on choosing the best parameters. Strategies to make this easier include:
-* Fourier method and interpolation method ([Zhou+ 2018](https://arxiv.org/abs/1812.01041))
-* Variational methods that alternate between a computer and quantum computer ([Farhi+ 2014](https://arxiv.org/abs/1411.4028))
+| Strategy                         | Description                                                                                                                                 | Drawbacks                                                                                                                                                                           | References                                     |
+|----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| brute force                      | Pre-compute the optimal parameters. Then use optimal parameters to run the algorithm.                                                       | Although the parameters are found, this takes time exponential with the graph size.                                                                                                 | [Farhi+ 2014](https://arxiv.org/abs/1411.4028) |
+| variational                      | Run the algorithm several times on a quantum computer, then use the results to choose new parameters. Repeat until you achieve convergence. | This requires using a quantum computer many times to find the right parameters. Noise in quantum computers may make it more challenging to choose improved parameters at each step. | [Farhi+ 2014](https://arxiv.org/abs/1411.4028) |
+| interpolative or Fourier methods | Solve optimal beta and gamma at small p, and use that to guess optimal betas and gammas at larger p.                                        | This does not guarantee that the optimal parameters are the best possible for QAOA.                                                                                                 | [Zhou+ 2018](https://arxiv.org/abs/1812.01041) |
 
-There are some studies of optimal QAOA parameters for some graphs being transferable to other graphs (instance independence); see [Galda+ 2021](https://arxiv.org/abs/2106.07531), [Brandao+ 2018](https://arxiv.org/abs/1812.04170), or [Wurtz+ 2021](https://arxiv.org/abs/2107.00677).
+Barren plateaus pose a challenge to numerically calculating optimal parameters. Parameter landscapes have many local optima and a lot of "flat" regions ("barren plateaus"). This means that local changes in parameters (e.g. gradient methods) may not improve the QAOA, making it very difficult to identify optimal parameters. See [McClean+ 2018](https://arxiv.org/abs/1803.11173) and [Wang+ 2020](https://arxiv.org/abs/2007.14384).
 
-
-It would be nice to discuss some results on barren plateaus here, and also mention what happens to error.
-
-optimal parameters cluster on small graphs -- [Lotshaw+ 2021](https://arxiv.org/abs/2102.06813)
-
-graph structure affect QAOA performance -- [Herrman+ 2021](https://arxiv.org/abs/2102.05997)
-
-wishlist:
-* compare and contrast parameter setting strategies
-    * brute force // preprocessing
-    * variational
-    * interpolative
-    * fourier methods
-* Does it depend on if the goal is to get the ground state or to get close?
+Some studies suggest that optimal QAOA parameters can transfer from graph instance to graph instance: see [Lotshaw+ 2021](https://arxiv.org/abs/2102.06813) for study at small graphs, [Galda+ 2021](https://arxiv.org/abs/2106.07531), and [Wurtz+ 2021](https://arxiv.org/abs/2107.00677). This is also true on large graphs; see a theoretical result of instance independence in [Brandao+ 2018](https://arxiv.org/abs/1812.04170).
 
 ## Extensions to QAOA
 
@@ -67,10 +58,6 @@ Several adjustments to QAOA have been proposed:
 Some of these extensions are "true extensions" (sampling things from quantum computers), such as penalty proposals and adjusting the mixers; while others are new protocols that use QAOA inside of it (CD-QAOA, RQAOA).
 
 Some of these protocols turn QAOA into a non-local algorithm.
-
-## Limitations to simulating QAOA
-
-Farhi & Harrow - quantum advantage/supremacy result
 
 
 ## Open problems
@@ -100,3 +87,5 @@ There are alternate metrics of performance, such as ___.
 ####  WRONG: QAOA is just adiabatic computation
 
 Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041) and also [Brady+ 2021](https://arxiv.org/abs/2107.01218)
+
+Let's add a statement on Farhi & Harrow - quantum advantage/supremacy result
