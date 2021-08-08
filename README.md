@@ -49,16 +49,14 @@ Some studies suggest that optimal QAOA parameters can transfer from graph instan
 
 ## Extensions to QAOA
 
-Several adjustments to QAOA have been proposed:
-* ST-QAOA [Wurtz+ 2021a](https://arxiv.org/abs/2103.17065)
-* CD-QAOA [Wurtz+ 2021b](https://arxiv.org/abs/2106.15645)
-* Alternating Operator Ansatz [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996)
-* RQAOA [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)
+Several adjustments to QAOA have been proposed. Some of these are new protocols that use QAOA as a subroutine; others add penalty terms or adjust the mixing Hamiltonian. Here is a list:
 
-Some of these extensions are "true extensions" (sampling things from quantum computers), such as penalty proposals and adjusting the mixers; while others are new protocols that use QAOA inside of it (CD-QAOA, RQAOA).
-
-Some of these protocols turn QAOA into a non-local algorithm.
-
+| Extension                           | How it works | References                                                                                             |
+|-------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|
+| ST-QAOA (Spanning Tree QAOA)        | ???          | [Wurtz+ 2021a](https://arxiv.org/abs/2103.17065)                                                       |
+| CD-QAOA (Counter-diabatic QAOA)     | ???          | [Wurtz+ 2021b](https://arxiv.org/abs/2106.15645)                                                       |
+| Quantum Alternating Operator Ansatz | ???          | [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996) |
+| RQAOA (Recursive QAOA)              | ???          | [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)                                                       |
 
 ## Open problems
 
