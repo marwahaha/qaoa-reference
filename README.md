@@ -64,26 +64,12 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 * How can we analyze QAOA at higher depth? (for example, some ideas in [Hadfield+ 2021](https://arxiv.org/abs/2105.06996))
 * How can we better choose the QAOA parameters?
 
-## Popular, incorrect statements about QAOA
+## Myths about QAOA
 
-####  WRONG: MAX-CUT is clearly an interesting problem for quantum advantage
-Goemans-Williamson (SDP) is already potentially optimal if Unique Games Conjecture is true. There may be families of graphs where quantum computing can help; but other problems have much bigger gaps between best classical algorithm and limits of approximation.
-
-####  WRONG: VQE is the same as QAOA
-It's worth making clear similarities and differences between VQE (e.g. electronic structure) and QAOA (diagonal eigenvalue problems vs non-diagonal eigenvalue problems)
-
-In VQE -- the ansatz holds something I can't hold classically, so intermediate strings don't tell me what the state is.
-
-####  WRONG: The expected performance is what matters
-
-You really want the highest value the QAOA returns; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail.
-
-The QAOA may also perform well even if the overlap with optimal value is low.
-
-There are alternate metrics of performance, such as ___.
-
-####  WRONG: QAOA is just adiabatic computation
-
-Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041) and also [Brady+ 2021](https://arxiv.org/abs/2107.01218)
-
-Let's add a statement on Farhi & Harrow - quantum advantage/supremacy result
+| Myth | Explanation |
+|------|-------------|
+| MAX-CUT is clearly an interesting problem for quantum advantage     |    Goemans-Williamson (SDP) is already potentially optimal if Unique Games Conjecture is true. There may be families of graphs where quantum computing can help; but other problems have much bigger gaps between best classical algorithm and limits of approximation.  |
+|   VQE is the same as QAOA   |       It's worth making clear similarities and differences between VQE (e.g. electronic structure) and QAOA (diagonal eigenvalue problems vs non-diagonal eigenvalue problems) <br/> In VQE -- the ansatz holds something I can't hold classically, so intermediate strings don't tell me what the state is.      |
+|   The expected performance is what matters    |      You really want the highest value the QAOA returns; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and chebyshev & chernoff to get bound on tail. <br/> The QAOA may also perform well even if the overlap with optimal value is low. <br/> There are alternate metrics of performance, such as ___.       |
+|   QAOA is just adiabatic computation   |  Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041) and also [Brady+ 2021](https://arxiv.org/abs/2107.01218)   |
+|   Using QAOA gives quantum advantage   |  Let's add a statement on Farhi & Harrow - quantum advantage/supremacy result  |
