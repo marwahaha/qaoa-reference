@@ -9,6 +9,8 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 * Some tutorials [here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html) and [here](https://qiskit.org/textbook/ch-applications/qaoa.html)
 * This is a 'local' algorithm, which may limit its power.
 
+It would be nice to add some mathematical descriptions, i.e. spin-x or other mixing terms, exponentials of cost functions, depth of circuits, trotterization approximation limit, etc.
+
 ## Performance analysis at low depth
 
 The QAOA at low depth is easiest to analyze. Here is a table of known results:
