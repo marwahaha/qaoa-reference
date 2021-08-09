@@ -59,6 +59,7 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 | CD-QAOA (Counter-diabatic QAOA)     | ???          | [Wurtz+ 2021b](https://arxiv.org/abs/2106.15645)                                                       |
 | Quantum Alternating Operator Ansatz | ???          | [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996) |
 | RQAOA (Recursive QAOA)              | ???          | [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)                                                       |
+| Th-QAOA (Threshold-based QAOA)              | ???          | [Golden+ 2021](https://arxiv.org/abs/2106.13860)                                                       |
 
 ## Open problems
 
