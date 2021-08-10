@@ -51,7 +51,7 @@ Some studies suggest that optimal QAOA parameters can transfer from graph instan
 
 ## Extensions to QAOA
 
-Several adjustments to QAOA have been proposed. Some of these are new protocols that use QAOA as a subroutine; others add penalty terms or adjust the mixing Hamiltonian. Here is a list:
+Several adjustments to QAOA have been proposed. Some of these are new protocols that use QAOA as a subroutine; others add penalty terms, use thermal state based objectives, or adjust the mixing Hamiltonian. Here is a list:
 
 | Extension                           | How it works | References                                                                                             |
 |-------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|
@@ -60,7 +60,7 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 | Quantum Alternating Operator Ansatz | ???          | [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996) |
 | RQAOA (Recursive QAOA)              | ???          | [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)                                                       |
 | Th-QAOA (Threshold-based QAOA)              | ???          | [Golden+ 2021](https://arxiv.org/abs/2106.13860)                                                       |
-| CVaR (Conditional Value-at-Risk)              | ???          | [Barkoutsos+ 2019](https://arxiv.org/abs/1907.04769)                                                       |
+| CVaR (Conditional Value-at-Risk)              | $$Alternative objective function to the standard expectation value $$\langle \psi | H | \psi \rangle$$         | [Barkoutsos+ 2019](https://arxiv.org/abs/1907.04769)                                                       |
 
 
 ## Open problems
