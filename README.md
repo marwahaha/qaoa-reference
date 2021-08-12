@@ -6,10 +6,9 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 * Can be implemented on near-term devices!
 * Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
-* Some tutorials [here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html) and [here](https://qiskit.org/textbook/ch-applications/qaoa.html)
 * This is a 'local' algorithm, which may limit its power.
 
-For deeper mathematical descriptions, see the paper or tutorials. Some important jargon: mixing terms, cost functions, circuit depth, Trotterization
+For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html) and [here](https://qiskit.org/textbook/ch-applications/qaoa.html)). Some important jargon: mixing terms, cost functions, circuit depth, Trotterization
 
 ## Performance analysis at low depth
 
