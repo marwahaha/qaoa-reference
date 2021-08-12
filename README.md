@@ -87,5 +87,4 @@ Figure from [Barak+ 2021](https://arxiv.org/abs/2106.05900):
 |   QAOA is just adiabatic computation   |  Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041) and also [Brady+ 2021](https://arxiv.org/abs/2107.01218).   |
 |   Using QAOA gives quantum advantage   |  Although sampling from a $$p=1$$ QAOA distribution is not possible classically ([Farhi+ 2016](https://arxiv.org/abs/1602.07674)), simply *using* QAOA does not necessarily mean you are calculating things classical computers cannot. In fact, there are no examples (yet?) of provable quantum advantage using QAOA on an optimization problem. |
 
----
 Have more to add? Edit this page (button on the left) or email Kunal Marwaha at [marwahaha@berkeley.edu](mailto:marwahaha@berkeley.edu).
