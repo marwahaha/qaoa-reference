@@ -70,7 +70,7 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 * How can we better choose the QAOA parameters?
 * How do we best implement constrained optimization?
   * When are penalty terms useful?
-* What are the optimal choices of mixers? (comparing $$p$$, or circuit sizea))
+* What are the optimal choices of mixers? (comparing $$p$$, or circuit size)
 * How can we best mitigate error from noise?
 
 Figure from [Barak+ 2021](https://arxiv.org/abs/2106.05900):
