@@ -55,19 +55,28 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 
 | Extension                           | How it works | References                                                                                             |
 |-------------------------------------|--------------|--------------------------------------------------------------------------------------------------------|
-| ST-QAOA (Spanning Tree QAOA)        | ???          | [Wurtz+ 2021a](https://arxiv.org/abs/2103.17065)                                                       |
-| CD-QAOA (Counter-diabatic QAOA)     | ???          | [Wurtz+ 2021b](https://arxiv.org/abs/2106.15645)                                                       |
-| Quantum Alternating Operator Ansatz | ???          | [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996) |
-| RQAOA (Recursive QAOA)              | ???          | [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)                                                       |
-| Th-QAOA (Threshold-based QAOA)              | ???          | [Golden+ 2021](https://arxiv.org/abs/2106.13860)                                                       |
-| CVaR (Conditional Value-at-Risk)              | Alternative objective function to the standard expectation value $$ \langle \psi \| H \| \psi \rangle$$         | [Barkoutsos+ 2019](https://arxiv.org/abs/1907.04769)                                                       |
-
+| ST-QAOA (Spanning Tree QAOA)        |  Changes the mixer to a sum of $$X_i X_j$$ terms on a spanning tree         | [Wurtz+ 2021a](https://arxiv.org/abs/2103.17065)                                                       |
+| CD-QAOA (Counter-diabatic QAOA)     | Adds terms to the mixer to mimic corrections to adiabaticity | [Wurtz+ 2021b](https://arxiv.org/abs/2106.15645)                                                       |
+| Quantum Alternating Operator Ansatz | Generalization of QAOA (parameterized unitaries and mixers; incorporating constraints into the mixers)          | [Hadfield+ 2017](https://arxiv.org/abs/1709.03489), [Hadfield+ 2021](https://arxiv.org/abs/2105.06996) |
+| RQAOA (Recursive QAOA)              | Recursively generates a more and more constrained problem. Uses QAOA (or some other quantum routine) to add constraints.         | [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)                                                       |
+| GM-QAOA (Grover Mixer QAOA) and Th-QAOA (Threshold-based QAOA)              |  Change the mixers to "flip phase" for a marked element (GM) or above a certain threshold (Th); imitates Grover search operators | [Bärtschi+ 2020](https://arxiv.org/abs/2006.00354), [Golden+ 2021](https://arxiv.org/abs/2106.13860)                                                       |
 
 ## Open problems
 
 * Which problems and families of instances can we show that QAOA provides advantage over classical algorithms?
 * How can we analyze QAOA at higher depth? (for example, some ideas in [Hadfield+ 2021](https://arxiv.org/abs/2105.06996))
+  * What happens at log depth?
+  * What happens at poly depth?
+* How does the QAOA performance scale with $$p$$?
 * How can we better choose the QAOA parameters?
+* How do we best implement constrained optimization?
+  * When are penalty terms useful?
+* What are the optimal choices of mixers? (comparing $$p$$, or circuit sizea))
+* How can we best mitigate error from noise?
+
+Figure from [Barak+ 2021](https://arxiv.org/abs/2106.05900):
+
+![A plot of conjectured performance of classical and quantum algorithms. It asks the question if NISQ Advantage for Optimization exists.](nisq_advantage.png)
 
 ## Myths about QAOA
 
@@ -75,6 +84,6 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 |------|-------------|
 | MAX-CUT is clearly an interesting problem for quantum advantage     |    Goemans-Williamson (SDP) is already potentially optimal if Unique Games Conjecture is true. There may be families of graphs where quantum computing can help; but other problems have much bigger gaps between best classical algorithm and limits of approximation.  |
 |   VQE is the same as QAOA   |  (???) VQE is a routine for finding the minimum eigenvalue of an unknown Hamiltonian  (e.g. electronic structure problem). The variational method is required because we don't know the Hamiltonian classically. In QAOA, by contrast, the Hamiltonian is known classically, but the best solution is not known. Stuart Hadfield refers to this distinction as non-diagonal eigenvalue problem vs diagonal eigenvalue problem.|
-|   The expected performance is what matters    |   You really want the highest value the QAOA returns; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and bound the chance of higher performance with tail bounds. (Caveat: at high enough $$n$$ and $$p$$, there may be concentration -- basically every bitstring you sample will achieve exactly the expected performance.) The QAOA may also perform well even if the overlap with optimal value is low. |
+|   The expected performance is what matters    |   You really want the highest value the QAOA returns; when you run the experiment many times, you take the best one, not the average one. But we use the average because it's easier to calculate, and bound the chance of higher performance with tail bounds. (Caveat: at high enough $$n$$ and $$p$$, there may be concentration -- basically every bitstring you sample will achieve exactly the expected performance.) The QAOA may also perform well even if the overlap with optimal value is low.<br/> There are alternative objective functions that may give more information about the distribution tail, including CVaR (Conditional Value-at-Risk) ([Barkoutsos+ 2019](https://arxiv.org/abs/1907.04769)) and feedback-based approaches ([Magann+ 2021](https://arxiv.org/abs/2103.08619)).                                                      |
 |   QAOA is just adiabatic computation   |  Although there are many similarities, there are settings where QAOA improves upon adiabatic computation. See [Zhou+ 2018](https://arxiv.org/abs/1812.01041) and also [Brady+ 2021](https://arxiv.org/abs/2107.01218)   |
 |   Using QAOA gives quantum advantage   |  Although sampling from a $$p=1$$ QAOA distribution is not possible classically [Farhi+ 2016](https://arxiv.org/abs/1602.07674), simply *using* QAOA does not necessarily mean you are calculating things classical computers cannot. In fact, there are no examples of provable quantum advantage using QAOA on an optimization problem. |
