@@ -10,7 +10,7 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 
 For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](www.mustythoughts.com/Quantum-Approximate-Optimization-Algorithm-Explained.html), [here](https://qiskit.org/textbook/ch-applications/qaoa.html)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
 
-\* (adiabatic evolution only solves the problem if the parameter size tends to 0; see Tad Hogg's paper)
+\* *(adiabatic evolution only solves the problem if the parameter size tends to 0; see Tad Hogg's paper)*
 
 ## Performance analysis at low depth
 
