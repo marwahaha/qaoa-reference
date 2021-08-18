@@ -29,6 +29,7 @@ There are some other results on low-depth QAOA (perhaps could be added to the ta
 * The performance of QAOA at $$p=1$$ for a "QUBO" (quadratic cost function) is known
 * Stuart Hadfield's thesis (for example, on MaxDiCut)
 * [NASA QuAIL's paper](https://arxiv.org/abs/1702.02577) on Grover search with QAOA
+* [Claes+ 2021](https://arxiv.org/abs/2102.12043) on mixed-spin glass models
 
 The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), and [Bravyi+ 2019](https://arxiv.org/abs/1910.08980).
 
@@ -48,6 +49,8 @@ At high depth, the algorithm's success is dependent on choosing the best paramet
 Barren plateaus pose a challenge to numerically calculating optimal parameters. Parameter landscapes have many local optima and a lot of "flat" regions ("barren plateaus"). This means that local changes in parameters (e.g. gradient methods) may not improve the QAOA, making it very difficult to identify optimal parameters. See [McClean+ 2018](https://arxiv.org/abs/1803.11173) and [Wang+ 2020](https://arxiv.org/abs/2007.14384).
 
 Some studies suggest that optimal QAOA parameters can transfer from graph instance to graph instance: see [Lotshaw+ 2021](https://arxiv.org/abs/2102.06813) for study at small graphs, [Galda+ 2021](https://arxiv.org/abs/2106.07531), and [Wurtz+ 2021](https://arxiv.org/abs/2107.00677). This is also true on large graphs; see a theoretical result of instance independence in [Brandao+ 2018](https://arxiv.org/abs/1812.04170).
+
+For certain problems with instance independence you can get analytical expressions for the optimal QAOA parameters. This happens for local problems like MAX-CUT on degree-3 graphs and for the SK model. On these problems, one can classically find the universal angles that apply to any (large) problem instance.
 
 ## Extensions to QAOA
 
