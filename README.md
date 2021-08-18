@@ -4,7 +4,7 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 
 * Protocol for approximately solving an optimization problem on a quantum computer
 * Can be implemented on near-term devices!
-* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves $$^*$$ the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
+* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves$$^*$$ the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
 * This is a 'local' algorithm, which may limit its power.
 
