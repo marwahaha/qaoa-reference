@@ -4,11 +4,13 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 
 * Protocol for approximately solving an optimization problem on a quantum computer
 * Can be implemented on near-term devices!
-* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
+* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves $$^*$$ the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
 * This is a 'local' algorithm, which may limit its power.
 
 For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](www.mustythoughts.com/Quantum-Approximate-Optimization-Algorithm-Explained.html), [here](https://qiskit.org/textbook/ch-applications/qaoa.html)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
+
+\* (adiabatic evolution only solves the problem if the parameter size tends to 0; see Tad Hogg's paper)
 
 ## Performance analysis at low depth
 
@@ -30,6 +32,7 @@ There are some other results on low-depth QAOA (perhaps could be added to the ta
 * Stuart Hadfield's thesis (for example, on MaxDiCut)
 * [NASA QuAIL's paper](https://arxiv.org/abs/1702.02577) on Grover search with QAOA
 * [Claes+ 2021](https://arxiv.org/abs/2102.12043) on mixed-spin glass models
+* the 'toy' Hamming-weight ramp and variations (there is a bound showing only states near weight $$n/2$$ matter for $$p=1$$); and maximally constrained 3-SAT with a single satisfying assignment. These allow perfect solution with $$p=1$$.
 
 The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), and [Bravyi+ 2019](https://arxiv.org/abs/1910.08980).
 
@@ -37,7 +40,7 @@ The graph structure may impact QAOA performance; see [Herrman+ 2021](https://arx
 
 ## Choosing optimal parameters
 
-At high depth, the algorithm's success is dependent on choosing the best parameters. There are different strategies to best set parameters, depending on your goal. (Note: Optimally tuning your parameters [is a NP-hard problem](https://arxiv.org/abs/2101.07267)!) Here is a table of different parameter-setting strategies:
+At high depth, the algorithm's success is dependent on choosing good parameters. There are different strategies to set good parameters, depending on your goal. (Note: Optimally tuning your parameters [is a NP-hard problem](https://arxiv.org/abs/2101.07267)!) Here is a table of different parameter-setting strategies:
 
 | Strategy                         | Description                                                                                                                                 | Drawbacks                                                                                                                                                                           | References                                     |
 |----------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
@@ -51,6 +54,8 @@ Barren plateaus pose a challenge to numerically calculating optimal parameters. 
 Some studies suggest that optimal QAOA parameters can transfer from graph instance to graph instance: see [Lotshaw+ 2021](https://arxiv.org/abs/2102.06813) for study at small graphs, [Galda+ 2021](https://arxiv.org/abs/2106.07531), and [Wurtz+ 2021](https://arxiv.org/abs/2107.00677). This is also true on large graphs; see a theoretical result of instance independence in [Brandao+ 2018](https://arxiv.org/abs/1812.04170).
 
 For certain problems with instance independence you can get analytical expressions for the optimal QAOA parameters. This happens for local problems like MAX-CUT on degree-3 graphs and for the SK model. On these problems, one can classically find the universal angles that apply to any (large) problem instance.
+
+QAOA might (and from simulations, appears to) perform well with good parameters, not necessarily optimal. This suggests (but doesn't prove!) that aiming to find optimal parameters for large $$p$$ is not only difficult, but also unnecessary.
 
 ## Extensions to QAOA
 
