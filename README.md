@@ -12,6 +12,8 @@ For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411
 
 \* *(adiabatic evolution only solves the problem if the parameter size tends to 0)*
 
+See a list of [papers tagged 'QAOA' on the arXiv.wiki](https://arxiv.wiki/tag/QAOA).
+
 ## Performance analysis at low depth
 
 The QAOA at low depth is easiest to analyze. Here is a table of known results:
