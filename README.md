@@ -4,13 +4,11 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 
 * Protocol for approximately solving an optimization problem on a quantum computer
 * Can be implemented on near-term devices!
-* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves$$^*$$ the problem as $$p \to \infty$$ (by recovering adiabatic evolution)
+* Variable parameter $$p$$ (depth) -- the optimal performance increases with $$p$$ and solves$$^*$$ the problem as $$p \to \infty$$ (\* QAOA recovers adiabatic evolution, will only solve it if the adiabatic algorithm will solve it)
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
 * This is a 'local' algorithm, which may limit its power.
 
 For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](www.mustythoughts.com/Quantum-Approximate-Optimization-Algorithm-Explained.html), [here](https://qiskit.org/textbook/ch-applications/qaoa.html)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
-
-\* *(adiabatic evolution only solves the problem if the parameter size tends to 0)*
 
 See a list of [papers tagged 'QAOA' on the arXiv.wiki](https://arxiv.wiki/tag/QAOA).
 
