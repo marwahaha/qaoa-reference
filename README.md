@@ -63,7 +63,7 @@ QAOA might (and from simulations, appears to) perform well with good parameters,
 The quality of solutions found by QAOA (without error correction or mitigation) quickly decays under noise. Noise also makes it harder to find optimal parameters.
 
 * [Franca+ 2020](https://arxiv.org/abs/2009.05532) shows that assuming each gate in the circuit fails with probability q, at a depth scaling like $$1/q$$ the expected energy of the output string is provably worse than that obtained by efficient classical algorithms. Interestingly, their results show that this can even happen at depths of the order $$1/(10q)$$, i.e. when only a small fraction of the qubits has been corrupted.  This indicates that very small noise rates might be necessary to obtain an advantage if implementing the QAOA unitaries in the physical device requires a large depth.
-* Under similar assumptions, [Wang+ 2020](https://arxiv.org/abs/2007.14384) shows that the gradient of the parameters of the QAOA circuit is exponentially small at depths of order $$n/q$$, where n is the number of qubits. This shows that the circuits are essentially untrainable at large depths.
+* Under similar assumptions, [Wang+ 2020](https://arxiv.org/abs/2007.14384) shows that the gradient of the parameters of the QAOA circuit is exponentially small at depths of order $$n/q$$, where $$n$$ is the number of qubits. This shows that the circuits are essentially untrainable at large depths.
 
 The rapid decay of the quality of QAOA due to noise has also been observed experimentally in [Harrigan+ 2021](https://www.nature.com/articles/s41567-020-01105-y).
 
