@@ -34,7 +34,7 @@ There are some other results on low-depth QAOA (perhaps could be added to the ta
 * [Claes+ 2021](https://arxiv.org/abs/2102.12043) on mixed-spin glass models
 * the 'toy' Hamming-weight ramp and variations (there is a bound showing only states near weight $$n/2$$ matter for $$p=1$$); and maximally constrained 3-SAT with a single satisfying assignment. These allow perfect solution with $$p=1$$.
 
-The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), and [Bravyi+ 2019](https://arxiv.org/abs/1910.08980).
+The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), [Bravyi+ 2019](https://arxiv.org/abs/1910.08980), and [Chou+ 2021](https://arxiv.org/abs/2108.06049).
 
 The graph structure may impact QAOA performance; see [Herrman+ 2021](https://arxiv.org/abs/2102.05997) for a study on small graphs.
 
