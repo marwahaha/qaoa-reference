@@ -8,7 +8,7 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
 * This is a 'local' algorithm, which may limit its power.
 
-For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](www.mustythoughts.com/Quantum-Approximate-Optimization-Algorithm-Explained.html), [here](https://qiskit.org/textbook/ch-applications/qaoa.html)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
+For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](www.mustythoughts.com/Quantum-Approximate-Optimization-Algorithm-Explained.html), [here](https://qiskit.org/textbook/ch-applications/qaoa.html), [here](https://github.com/rsln-s/QAOA_tutorial)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
 
 See a list of [papers tagged 'QAOA' on the arXiv.wiki](https://arxiv.wiki/tag/QAOA).
 
@@ -58,14 +58,20 @@ For certain problems with instance independence you can get analytical expressio
 QAOA might (and from simulations, appears to) perform well with good parameters, not necessarily optimal. This suggests (but doesn't prove!) that aiming to find optimal parameters for large $$p$$ is not only difficult, but also unnecessary.
 
 
-## QAOA performance under noise
+## QAOA performance under noise and errors
 
 The quality of solutions found by QAOA (without error correction or mitigation) quickly decays under noise. Noise also makes it harder to find optimal parameters.
 
 * [Franca+ 2020](https://arxiv.org/abs/2009.05532) shows that assuming each gate in the circuit fails with probability q, at a depth scaling like $$1/q$$ the expected energy of the output string is provably worse than that obtained by efficient classical algorithms. Interestingly, their results show that this can even happen at depths of the order $$1/(10q)$$, i.e. when only a small fraction of the qubits has been corrupted.  This indicates that very small noise rates might be necessary to obtain an advantage if implementing the QAOA unitaries in the physical device requires a large depth.
 * Under similar assumptions, [Wang+ 2020](https://arxiv.org/abs/2007.14384) shows that the gradient of the parameters of the QAOA circuit is exponentially small at depths of order $$n/q$$, where $$n$$ is the number of qubits. This shows that the circuits are essentially untrainable at large depths.
+* [Quiroz+ 2021](https://arxiv.org/abs/2109.04482) shows that the performance of QAOA decays exponentially with errors in the parameters. See also [Marshall+ 2020](https://arxiv.org/abs/2002.11682), [Xue+ 2019](https://arxiv.org/abs/1909.02196).
 
 The rapid decay of the quality of QAOA due to noise has also been observed experimentally in [Harrigan+ 2021](https://www.nature.com/articles/s41567-020-01105-y).
+
+There are also strategies to deal with errors:
+* [Shaydulin+ 2021](https://arxiv.org/abs/2106.04410) shows how the symmetries in QAOA ansatz can be used to mitigate errors. Applies this approach on quantum hardware fo MaxCut.
+* [Botelho+ 2021](https://arxiv.org/abs/2108.10927) exteneds symmetry approach to Quantum Alternating Operator Ansatz
+
 
 
 ## Extensions to QAOA
