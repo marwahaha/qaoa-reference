@@ -57,6 +57,7 @@ For certain problems with instance independence you can get analytical expressio
 
 QAOA might (and from simulations, appears to) perform well with good parameters, not necessarily optimal. This suggests (but doesn't prove!) that aiming to find optimal parameters for large $$p$$ is not only difficult, but also unnecessary.
 
+There are different strategies to optimize parameters treating the QAOA optimization as a control problem; see [Niu+ 2019](https://arxiv.org/abs/1905.12134), [Dong+ 2019](https://arxiv.org/abs/1911.00789), [Wiersema+ 2020](https://arxiv.org/abs/2008.02941).
 
 ## QAOA performance under noise and errors
 
