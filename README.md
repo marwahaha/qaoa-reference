@@ -88,6 +88,7 @@ Several adjustments to QAOA have been proposed. Some of these are new protocols 
 | RQAOA (Recursive QAOA)              | Recursively generates a more and more constrained problem. Uses QAOA (or some other quantum routine) to add constraints.         | [Bravyi+ 2019](https://arxiv.org/abs/1910.08980)                                                       |
 | GM-QAOA (Grover Mixer QAOA) and Th-QAOA (Threshold-based QAOA)              |  Change the mixers to "flip phase" for a marked element (GM) or above a certain threshold (Th); imitates Grover search operators | [Bärtschi+ 2020](https://arxiv.org/abs/2006.00354), [Golden+ 2021](https://arxiv.org/abs/2106.13860)                                                       |
 | Warm-start QAOA | Approximately solve the problem with a different method; then use that output as the initial state to QAOA | [Egger+ 2020](https://arxiv.org/abs/2009.10095), [Tate+ 2020](https://arxiv.org/abs/2010.14021) |
+| Multi-angle QAOA | Separate the cost Hamiltonian into individual terms, and use a different angle per term at every step | [Herrman+ 2021](https://arxiv.org/abs/2109.11455) |
 
 Some extensions use alternative cost functions besides the cost Hamiltonian, including CVaR (Conditional Value-at-Risk) ([Barkoutsos+ 2019](https://arxiv.org/abs/1907.04769)), feedback-based approaches ([Magann+ 2021](https://arxiv.org/abs/2103.08619)), and Gibbs sampling. These aim to estimate higher moments of the distribution to improve the "best" (vs expected) performance of QAOA.
 
