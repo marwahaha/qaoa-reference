@@ -34,10 +34,15 @@ There are some other results on low-depth QAOA (perhaps could be added to the ta
 * [NASA QuAIL's paper](https://arxiv.org/abs/1702.02577) on Grover search with QAOA
 * [Claes+ 2021](https://arxiv.org/abs/2102.12043) on mixed-spin glass models
 * the 'toy' Hamming-weight ramp and variations (there is a bound showing only states near weight $$n/2$$ matter for $$p=1$$); and maximally constrained 3-SAT with a single satisfying assignment. These allow perfect solution with $$p=1$$.
-
-The QAOA at low depth has some known performance limitations. For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747), [Bravyi+ 2019](https://arxiv.org/abs/1910.08980), and [Chou+ 2021](https://arxiv.org/abs/2108.06049).
+* Worst-case bounds on MAX-CUT of d-regular bipartite graphs are known via [Bravyi+ 2019](https://arxiv.org/abs/1910.08980) and [Farhi+ 2020b](https://arxiv.org/abs/2005.08747). The former proves the bound by showing a weaker version of a symmetry-protected No-Low Energy Trivial States (NLTS) conjecture, and the latter improves upon the obstruction via an indistinguishability argument about the local-neighborhood of random $d$-regular graphs.
 
 The graph structure may impact QAOA performance; see [Herrman+ 2021](https://arxiv.org/abs/2102.05997) for a study on small graphs.
+
+## QAOA & the Overlap Gap Property
+
+A sequence of recent results has conclusively established the so-called "Overlap Gap Property" (OGP), which is a statement about the solution geometry of near-optimal solutions of a problem, as a conclusive obstacle to the QAOA up to a depth where it is _local_ (does not see the entire input w.h.p.). For example, see [Farhi+ 2020a](https://arxiv.org/abs/2004.09002) and [CLSS21](https://arxiv.org/abs/2108.06049). These obstructions are _Average-Case_ and typically apply to almost all instances of a problem drawn from a "natural" distribution.
+
+In particular, [CLSS21](https://arxiv.org/abs/2108.06049) shows that QAOA up to depth $c\cdot \log(n)$ is obstructed on almost all instances of _any_ Constraint Satisfaction Problem (CSP) that satisfies a property called the "Coupled Overlap Gap Property" (C-OGP). This immediately implies that QAOA up to the depth above is obstructed on random instances of _MAX-k-XOR_ for $k \geq 4$ and even (as a C-OGP is demonstrated to exist for the problem by [CLSS21](https://arxiv.org/abs/2108.06049), extending a result of [CGPR19](https://arxiv.org/pdf/1707.05386.pdf)). Furthermore, as consequence of one of the concentration lemmas in [CLSS21](https://arxiv.org/abs/2108.06049), the "Landscape Independence" conjecture of [BBFGN18] is also resolved positively - This asserts that up to $c\cdot \log(n)$ depth, the QAOA algorithm (with any fixed angles) performs almost equally well on almost all instances.
 
 ## Choosing optimal parameters
 
