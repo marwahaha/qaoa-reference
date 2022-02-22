@@ -8,7 +8,7 @@ QAOA is short for "Quantum Approximate Optimization Algorithm".
 * In order to use this algorithm optimally, you have to tune $$2p$$ parameters (this gets hard as $$p$$ grows!)
 * This is a 'local' algorithm, which may limit its power.
 
-For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](www.mustythoughts.com/Quantum-Approximate-Optimization-Algorithm-Explained.html), [here](https://qiskit.org/textbook/ch-applications/qaoa.html), [here](https://github.com/rsln-s/QAOA_tutorial)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
+For deeper mathematical descriptions, see [the paper](https://arxiv.org/abs/1411.4028) or tutorials ([here](https://pennylane.ai/qml/demos/tutorial_qaoa_maxcut.html), [here](https://www.mustythoughts.com/quantum-approximate-optimization-algorithm-explained), [here](https://qiskit.org/textbook/ch-applications/qaoa.html), [here](https://github.com/rsln-s/QAOA_tutorial)). Some important jargon: mixing terms, cost functions, circuit depth, and Trotterization.
 
 See a list of [papers tagged 'QAOA' on the arXiv.wiki](https://arxiv.wiki/tag/QAOA).
 
