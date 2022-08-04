@@ -101,7 +101,7 @@ Some extensions use alternative cost functions besides the cost Hamiltonian, inc
 ## Open problems
 
 * Which problems and families of instances can we show that QAOA provides advantage over classical algorithms? 
-  * [Sreedhar+ 2022](https://arxiv.org/abs/2207.03404) have numerically observed that low entangled tensor network based classical approximations of QAOA work equally well as standard QAOA when applied to randomly generated MaxCut on Erdos Renyi graph instances and Exact Cover 3 instances. This suggests reduced likelyhood for a quantum advantage for these families of instances. 
+  * [Sreedhar+ 2022](https://arxiv.org/abs/2207.03404) have numerically observed that low entangled tensor network based classical approximations of QAOA work equally well as standard QAOA when applied to randomly generated MaxCut on Erdos-Renyi graph instances and Exact Cover 3 instances. This suggests reduced likelihood for a quantum advantage for these families of instances. 
 * How can we analyze QAOA at higher depth? (for example, some ideas in [Hadfield+ 2021](https://arxiv.org/abs/2105.06996))
   * What happens at log depth?
   * What happens at poly depth?
